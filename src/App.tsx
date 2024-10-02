@@ -40,7 +40,10 @@ const App = () => {
 
   return (
     <>
-      <AnimeList data={data?.Page?.media} />
+      <AnimeList
+        data={data?.Page?.media}
+        page={data?.Page?.pageInfo?.currentPage}
+      />
       <div ref={listEndRef} />
 
       {loading && (

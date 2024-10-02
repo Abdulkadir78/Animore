@@ -23,9 +23,11 @@ interface PageParams {
   page: number;
 }
 
+export const PER_PAGE = 50;
+
 export const GET_PAGE: TypedDocumentNode<PageResponse, PageParams> = gql`
   query getPage($page: Int = 1) {
-    Page(page: $page, perPage: 50) {
+    Page(page: $page, perPage: ${PER_PAGE}) {
       pageInfo {
         lastPage
         currentPage
